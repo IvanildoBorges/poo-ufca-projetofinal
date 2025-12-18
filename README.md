@@ -7,7 +7,7 @@ Projeto desenvolvido para gerenciamento de um acervo pessoal de livros e revista
 | **YAN BRASIL ANGELIM DE BRITO**         | *Classes abstratas e mixins*    |
 | **CICERO IVANILDO BORGES ALVES**        | *Classes concretas e Interface* |
 | **CICERO DANILO DO NASCIMENTO PEREIRA** | *Testes*                        |
-| **BRENNA ISABELLY DE OLIVEIRA**         | *Documentação*                  |
+| **BRENNA ISABELLY DE OLIVEIRA BEZERRA** | *Documentação*                  |
 
 ## 1. Arquitetura do Projeto
 O projeto segue uma arquitetura baseada em camadas, separando o Domínio (Entidades e Regras) da Infraestrutura (Persistência e Configurações), o que facilita a manutenção e o teste.
