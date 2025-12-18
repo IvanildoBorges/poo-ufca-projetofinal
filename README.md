@@ -15,16 +15,16 @@ O projeto segue uma arquitetura baseada em camadas, separando o Domínio (Entida
 **Estrutura de Pastas**
 ```bash
 biblioteca_digital/
-├── core/
-│   ├── dominio/
+├── app/
+│   ├──domain/
 │   │   ├── publicacao.py        # Publicacao (Abstrata), Livro, Revista
 │   │   ├── anotacao.py
 │   │   ├── colecao.py           # Colecao e Mixin
 │   │   └── enums.py             # StatusLeitura
-│   ├── infraestrutura/
+│   ├── infrastructure/
 │   │   ├── repositorio.py       # Repositorio (Interface), JSONRepositorio
 │   │   └── configuracoes.py
-│   └── servicos/
+│   └── services/
 │       └── relatorios.py        # GeradorRelatorios
 ├── cli.py                       # Interface de Linha de Comando
 ├── settings.json                # Configurações do usuário
