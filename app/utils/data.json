@@ -1,0 +1,32 @@
+{
+  "publicacoes": [
+    {
+      "tipo": "Livro",
+      "titulo": "Programação Orientada a Objetos com Python",
+      "autor": "Ana Silva",
+      "ano": 2021,
+      "isbn": "978-85-12345-67-8",
+      "status": "NAO_LIDO",
+      "avaliacao": 4
+    },
+    {
+      "tipo": "Livro",
+      "titulo": "Estruturas de Dados",
+      "autor": "Carlos Souza",
+      "ano": 2019,
+      "isbn": "978-85-98765-43-2",
+      "status": "LENDO",
+      "avaliacao": 5
+    },
+    {
+      "tipo": "Revista",
+      "titulo": "Revista Python Brasil",
+      "autor": "Comunidade Python",
+      "ano": 2023,
+      "edicao": "42",
+      "periodicidade": "Mensal",
+      "status": "LIDO",
+      "avaliacao": 3
+    }
+  ]
+}

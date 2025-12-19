@@ -4,10 +4,10 @@ Projeto desenvolvido para gerenciamento de um acervo pessoal de livros e revista
 ## Equipe:
 | Nome                                    | Responsabilidade              |
 | --------------------------------------- | ----------------------------- |
-| **YAN BRASIL ANGELIM DE BRITO**         | *Classes abstratas e mixins*    |
-| **CICERO IVANILDO BORGES ALVES**        | *Classes concretas e Interface* |
-| **CICERO DANILO DO NASCIMENTO PEREIRA** | *Testes*                        |
-| **BRENNA ISABELLY DE OLIVEIRA**         | *Documentação*                  |
+| **CICERO IVANILDO BORGES ALVES**        | *Publicacao, enums, utils, infrastructure e README* |
+| **BRENNA ISABELLY DE OLIVEIRA**         | *Revista, Livro e Anotacao* |
+| **YAN BRASIL ANGELIM DE BRITO**         | *Colecao, relatorios e mixins* |
+| **CICERO DANILO DO NASCIMENTO PEREIRA** | *test_publicacao, test_revista, test_livro, test_anotacao e test_colecao* |
 
 ## 1. Arquitetura do Projeto
 O projeto segue uma arquitetura baseada em camadas, separando o Domínio (Entidades e Regras) da Infraestrutura (Persistência e Configurações), o que facilita a manutenção e o teste.
@@ -17,17 +17,27 @@ O projeto segue uma arquitetura baseada em camadas, separando o Domínio (Entida
 biblioteca_digital/
 ├── app/
 │   ├──domain/
-│   │   ├── publicacao.py        # Publicacao (Abstrata), Livro, Revista
-│   │   ├── anotacao.py
-│   │   ├── colecao.py           # Colecao e Mixin
-│   │   └── enums.py             # StatusLeitura
+│   │   ├── models
+│   │   │   ├── Publicacao.py
+│   │   │   ├── Livro.py
+│   │   │   ├── Revista.py
+│   │   │   ├── Anotacao.py
+│   │   │   └── Colecao.py
+│   │   ├── mixins/
+│   │   │   └── GerenciamentoLeiturasMixin.py
+│   │   └── enums/
+│   │       └── status_leitura.py
 │   ├── infrastructure/
-│   │   ├── repositorio.py       # Repositorio (Interface), JSONRepositorio
+│   │   ├── repositorio.py          # Repositorio (Interface), JSONRepositorio
+│   │   ├── cli.py                  # Interface de Linha de Comando
 │   │   └── configuracoes.py
 │   └── services/
-│       └── relatorios.py        # GeradorRelatorios
-├── cli.py                       # Interface de Linha de Comando
-├── settings.json                # Configurações do usuário
+│   │   └── relatorios.py           # Gerador de Relatorios
+│   └── utils/
+│       └── data.json               # dados para alimentar o sistema de biblioteca
+├── tests/
+├── main.py
+├── requirements.txt
 └── README.md
 ```
 
