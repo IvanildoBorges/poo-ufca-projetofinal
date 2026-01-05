@@ -1,7 +1,7 @@
 from app.domain.models.Livro import Livro
 from app.domain.models.Revista import Revista
 from app.domain.enums.status_leitura import StatusLeitura
-from app.services.relatorios import GeradorRelatorios
+#from app.services.relatorios import GeradorRelatorios
 
 class CLIInterface:
     def __init__(self, colecao, repositorio, configuracoes):
@@ -44,7 +44,7 @@ class CLIInterface:
         print("\nCadastrar:")
         print("1 - Livro")
         print("2 - Revista")
-        tipo = input("Escolha o tipo: ")
+        tipo = input("Escolha uma opções numéricas anteriores: ")
 
         titulo = input("Título: ")
         autor = input("Autor: ")
@@ -68,24 +68,23 @@ class CLIInterface:
 
     def handle_listar(self):
         print("\n📄 Publicações:")
-        for pub in self.colecao.publicacoes:
-            print(pub)
+        if len(self.colecao.publicacoes) == 0:
+                print("Nenhuma publicação encontrada!")
+        else:
+            for pub in self.colecao.publicacoes:
+                print(pub)
 
-    def handle_relatorios(self):
-        relatorio = GeradorRelatorios(self.colecao)
-
-        print("\n📊 Relatórios")
-        print("1 - Média de avaliações")
-        print("2 - Verificar meta anual")
-
-        opcao = input("Escolha: ")
-
-        if opcao == "1":
-            print("Média:", relatorio.media_avaliacoes())
-
-        elif opcao == "2":
-            meta = self.configuracoes.obter_meta_anual()
-            print(relatorio.verificar_meta_anual(meta))
+    # def handle_relatorios(self):
+    #     relatorio = GeradorRelatorios(self.colecao)
+    #     print("\n📊 Relatórios")
+    #     print("1 - Média de avaliações")
+    #     print("2 - Verificar meta anual")
+    #     opcao = input("Escolha: ")
+    #     if opcao == "1":
+    #         print("Média:", relatorio.media_avaliacoes())
+    #     elif opcao == "2":
+    #         meta = self.configuracoes.obter_meta_anual()
+    #         print(relatorio.verificar_meta_anual(meta))
 
     def handle_salvar(self):
         self.repositorio.salvar(self.colecao)
