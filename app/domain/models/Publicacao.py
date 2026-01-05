@@ -27,6 +27,16 @@ class Publicacao(ABC):
         self._titulo = value
     
     @property
+    def autor(self):
+        return self._autor
+    
+    @autor.setter
+    def autor(self, value):
+        if not value or not value.strip():
+            raise ValueError("Autor não pode ser vazio")
+        self._autor = value
+    
+    @property
     def ano(self):
         return self._ano
     
@@ -37,12 +47,18 @@ class Publicacao(ABC):
         self._ano = value
     
     @property
-    def avaliacao(self):
-        return self._avaliacao
+    def genero(self):
+        return self._genero
+    
+    @genero.setter
+    def genero(self, value):
+        if not value or not value.strip():
+            raise ValueError("Gênero não pode ser vazio")
+        self._genero = value
     
     @property
-    def status(self):
-        return self._status
+    def avaliacao(self):
+        return self._avaliacao
 
     @avaliacao.setter
     def avaliacao(self, value):
@@ -51,6 +67,17 @@ class Publicacao(ABC):
         if not 0 <= value <= 10:
             raise ValueError("Avaliação deve estar entre 0 e 10")
         self._avaliacao = value
+    
+    @property
+    def status(self):
+        return self._status
+    
+    @status.setter
+    def status(self, value):
+        if isinstance(value, StatusLeitura):
+            self._status = value
+        else:
+            raise ValueError("Status deve ser uma instância de StatusLeitura")
     
     def iniciar_leitura(self):
         if self._status == StatusLeitura.NAO_LIDO:
