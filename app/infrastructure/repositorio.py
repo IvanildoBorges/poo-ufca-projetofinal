@@ -74,8 +74,11 @@ class JSONRepositorio(Repositorio):
                 else:
                     continue
 
-                pub.status = status
-                pub.avaliacao = item.get("avaliacao")
+                pub.status = status  # Aqui definimos o status corretamente
+
+                # Só atribuir a avaliação se o status for LIDO
+                if pub.status == StatusLeitura.LIDO:
+                    pub.avaliacao = item.get("avaliacao")
 
                 publicacoes.append(pub)
 
