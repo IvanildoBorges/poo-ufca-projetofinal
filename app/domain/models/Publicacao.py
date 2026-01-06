@@ -106,5 +106,5 @@ class Publicacao(ABC):
         return self._titulo == other._titulo and self._autor == other._autor
     
     @abstractmethod
-    def tipo(self):
+    def tipo(self) -> str:
         pass

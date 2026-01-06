@@ -75,28 +75,19 @@ class Relatorio:
         """Gera e imprime um relatório completo da coleção de forma detalhada."""
         print("--- Relatório Detalhado da Coleção de Publicações ---")
 
-        # 1. Informa o total de publicações cadastradas
+        # Informa o total de publicações cadastradas
         total = self.total_publicacoes()
         print(f"Total de publicações cadastradas: {total}")
 
-        # 2. Informa o resumo de status de leitura
+        # Informa o resumo de status de leitura
         status_resumo = self.status_leitura_resumo()
         print("\n--- Resumo por Status de Leitura ---")
         for nome_status, dados_status in status_resumo.items():
             print(f"- {nome_status}: {dados_status['quantidade']} publicações ({dados_status['percentual']:.2f}%)")
 
-        # 3. Informa a média das avaliações das publicações lidas
+        # Informa a média das avaliações das publicações lidas
         media_avaliacoes = self.media_avaliacoes_lidas()
         if media_avaliacoes > 0:
             print(f"\n--- Média das Avaliações (publicações lidas): {media_avaliacoes:.2f} ---")
         else:
             print("\n--- Nenhuma publicação lida e avaliada para calcular a média. ---")
-
-        # 4. Informa o Top 5 publicações mais bem avaliadas
-        top_publicacoes = self.top_5_avaliadas()
-        if top_publicacoes:
-            print("\n--- Top 5 Publicações Mais Bem Avaliadas ---")
-            for indice, publicacao in enumerate(top_publicacoes):
-                print(f"{indice+1}. {publicacao.titulo} por {publicacao.autor} (Avaliação: {publicacao.avaliacao})")
-        else:
-            print("\n--- Nenhuma publicação avaliada para mostrar o Top 5. ---")
