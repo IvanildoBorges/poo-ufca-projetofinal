@@ -5,7 +5,7 @@ Projeto desenvolvido para gerenciamento de um acervo pessoal de livros e revista
 | Nome                                    | Responsabilidade              |
 | --------------------------------------- | ----------------------------- |
 | **CICERO IVANILDO BORGES ALVES**        | *Publicacao, enums, utils, infrastructure e README* |
-| **BRENNA ISABELLY DE OLIVEIRA**         | *Revista, Livro e Anotacao* |
+| **BRENNA ISABELLY DE OLIVEIRA BEZERRA** | *Revista, Livro e Anotacao* |
 | **YAN BRASIL ANGELIM DE BRITO**         | *Colecao, relatorios e mixins* |
 | **CICERO DANILO DO NASCIMENTO PEREIRA** | *test_publicacao, test_revista, test_livro, test_anotacao e test_colecao* |
 
